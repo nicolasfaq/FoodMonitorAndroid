@@ -25,9 +25,7 @@ public class Principale extends AppCompatActivity {
 
 
 
-    String[] values = new String[]{
 
-    };
 
 
     @Override
