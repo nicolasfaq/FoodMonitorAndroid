@@ -17,11 +17,11 @@ public class Principale extends AppCompatActivity {
 
     ListView mListView;
 
-    Date date1 = new Date(2017,02,28);
-    Date date2 = new Date(2017,02,29);
+//    Date date1 = new Date(2017,02,28);
+//    Date date2 = new Date(2017,02,29);
 
-    Food food1 = new Food("pate",date1);
-    Food food2 = new Food("cereales",date2);
+    Food food1 = new Food("pate","29/02/2017");
+    Food food2 = new Food("cereales","01/04/2017");
 
 
 

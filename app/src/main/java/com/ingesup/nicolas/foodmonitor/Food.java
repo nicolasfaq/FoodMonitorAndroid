@@ -12,10 +12,10 @@ import java.util.List;
 
 public class Food {
     private String name;
-    private Date expDate;
+    private String expDate;
     public static ArrayList<Food> listFood = new ArrayList<Food>() ;
 
-    Food (String name, Date expDate){
+    Food (String name, String expDate){
         this.name = name;
         this.expDate = expDate;
         listFood.add(this);
@@ -25,7 +25,7 @@ public class Food {
         return name;
     }
 
-    public Date getExpDate(){
+    public String getExpDate(){
         return expDate;
     }
 
