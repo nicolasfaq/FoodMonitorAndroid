@@ -4,6 +4,7 @@ import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -12,24 +13,24 @@ import java.util.List;
 
 public class Food {
     private String name;
-    private String expDate;
-    public static ArrayList<Food> listFood = new ArrayList<Food>() ;
+    private Date expDate;
+    public static HashMap<String, Date> listFood = new HashMap<>() ;
 
-    Food (String name, String expDate){
+    Food (String name, Date expDate){
         this.name = name;
         this.expDate = expDate;
-        listFood.add(this);
+        listFood.put(this.name,this.expDate );
     }
 
     public String getName() {
         return name;
     }
 
-    public String getExpDate(){
+    public Date getExpDate(){
         return expDate;
     }
 
-    public static List<String> getListNameFoodList(){
+/*    public static List<String> getListNameFoodList(){
         List<String> names = new ArrayList<String>() {};
 
         for (Food food:listFood
@@ -38,5 +39,5 @@ public class Food {
         }
 
         return names;
-    }
+    }*/
 }

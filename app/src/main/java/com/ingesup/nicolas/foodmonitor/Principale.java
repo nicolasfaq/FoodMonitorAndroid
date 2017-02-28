@@ -10,18 +10,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 public class Principale extends AppCompatActivity {
 
-    ListView mListView;
+//    ListView mListView;
 
-//    Date date1 = new Date(2017,02,28);
-//    Date date2 = new Date(2017,02,29);
+    Date date1 = new Date(2017,02,28);
+    Date date2 = new Date(2017,02,29);
 
-    Food food1 = new Food("pate","29/02/2017");
-    Food food2 = new Food("cereales","01/04/2017");
+    Food food1 = new Food("pate",date1);
+    Food food2 = new Food("cereales",date2);
 
 
 
@@ -44,15 +50,32 @@ public class Principale extends AppCompatActivity {
             }
         });
 
+        ListView listFoodView = (ListView) findViewById(R.id.listFood);
 
-        mListView = (ListView) findViewById(R.id.listFood);
+        List<HashMap<String, String>> listItem = new ArrayList<>();
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        SimpleAdapter adapter = new SimpleAdapter(this, listItem, R.layout.list_item,
+                new String[]{"First Line","Second Line"},
+                new int[]{R.id.text1,R.id.text2});
+
+        Iterator it = Food.listFood.entrySet().iterator();
+        while (it.hasNext()){
+            HashMap<String,String> resultMap = new HashMap<>();
+            Map.Entry pair = (Map.Entry)it.next();
+            resultMap.put("First Line",pair.getKey().toString());
+            resultMap.put("Second Line", pair.getValue().toString());
+            listItem.add(resultMap);
+        }
+        listFoodView.setAdapter(adapter);
+
+//        mListView = (ListView) findViewById(R.id.listFood);
+
+/*        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, Food.getListNameFoodList());
 
 
 
-        mListView.setAdapter(adapter);
+        mListView.setAdapter(adapter);*/
     }
 
     @Override
