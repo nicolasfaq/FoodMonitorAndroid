@@ -32,7 +32,7 @@ public class FoodDAO {
          String datePeremp=null;
          URL myURL = null;
 
-        String url = "C:\\Users\\moussa\\AndroidStudioProjects\\FoodMonitor\\app\\src\\main\\res\\values\\data.xml" ;
+        String url = "C:\\Users\\Nicolas\\AndroidStudioProjects\\FoodMonitor\\data.xml" ;
         try {
             myURL = new URL(url);
 
@@ -76,7 +76,7 @@ public class FoodDAO {
                         datePeremp = lesProprietes.item(j).getTextContent().trim();
                     }
                 }
-                SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss aa");
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
                 Food food1 = null;
                 try {
                     food1 = new Food(name,dateFormat.parse(datePeremp));
