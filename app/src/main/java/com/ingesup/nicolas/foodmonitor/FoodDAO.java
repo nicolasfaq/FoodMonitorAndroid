@@ -15,6 +15,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -27,10 +28,10 @@ import javax.xml.parsers.ParserConfigurationException;
 
 public class FoodDAO {
 
-    public static List<Food> getFood(){
-         String name=null;
-         String datePeremp=null;
-         URL myURL = null;
+    public static HashMap<String,Date> getFood(){
+        String name=null;
+        String datePeremp=null;
+        URL myURL = null;
 
         String url = "../data.xml" ;
         try {
@@ -47,7 +48,7 @@ public class FoodDAO {
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
         }
-        List<Food> listFood = new ArrayList<Food>();
+        HashMap<String,Date> listFood = new HashMap<String,Date>();
 
         try {
             Log.d("URL", myURL.toString());
@@ -76,22 +77,23 @@ public class FoodDAO {
                         datePeremp = lesProprietes.item(j).getTextContent().trim();
                     }
                 }
+
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
                 Food food1 = null;
+
                 try {
-                    food1 = new Food(name,dateFormat.parse(datePeremp));
+                    listFood.put(name,dateFormat.parse(datePeremp));
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
-                listFood.add(food1);
             }
 
 
         }
         catch (SAXException e) {
-        e.printStackTrace();
-    }
+            e.printStackTrace();
+        }
 
-    return listFood;
+        return listFood;
     } }
 
