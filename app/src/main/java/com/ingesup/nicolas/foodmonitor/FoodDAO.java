@@ -1,5 +1,6 @@
 package com.ingesup.nicolas.foodmonitor;
 
+import android.content.Context;
 import android.util.Log;
 
 import org.w3c.dom.Document;
@@ -33,7 +34,7 @@ public class FoodDAO {
         String datePeremp=null;
         URL myURL = null;
 
-        String url = "../data.xml" ;
+        String url = "C:\\Users\\Nicolas\\AndroidStudioProjects\\FoodMonitor\\app\\data.xml" ;
         try {
             myURL = new URL(url);
 

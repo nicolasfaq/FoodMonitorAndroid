@@ -58,7 +58,7 @@ public class Principale extends AppCompatActivity {
                 new String[]{"First Line","Second Line"},
                 new int[]{R.id.text1,R.id.text2});
 
-        Iterator it = Food.listFood.entrySet().iterator();
+        Iterator it = FoodDAO.getFood().entrySet().iterator();
         while (it.hasNext()){
             HashMap<String,String> resultMap = new HashMap<>();
             Map.Entry pair = (Map.Entry)it.next();

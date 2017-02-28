@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/FoodMonitor.iml" filepath="$PROJECT_DIR$/FoodMonitor.iml" />
       <module fileurl="file://$PROJECT_DIR$/FoodMonitorAndroid.iml" filepath="$PROJECT_DIR$/FoodMonitorAndroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
