@@ -33,7 +33,7 @@ public class FoodDAO {
         String datePeremp=null;
         URL myURL = null;
 
-        String url = "C:\\Users\\moussa\\Desktop\\data.xml" ;
+        String url = "../data.xml" ;
         try {
             myURL = new URL(url);
 
