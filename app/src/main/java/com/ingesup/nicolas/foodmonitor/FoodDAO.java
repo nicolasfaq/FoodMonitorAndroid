@@ -33,10 +33,7 @@ public class FoodDAO {
         String datePeremp=null;
         URL myURL = null;
 
-
-
         String url = "../data.xml" ;
-
         try {
             myURL = new URL(url);
 
@@ -80,10 +77,8 @@ public class FoodDAO {
                         datePeremp = lesProprietes.item(j).getTextContent().trim();
                     }
                 }
-
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
                 Food food1 = null;
-
                 try {
                     listFood.put(name,dateFormat.parse(datePeremp));
                 } catch (ParseException e) {
