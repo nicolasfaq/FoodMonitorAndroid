@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">FoodMonitor</string>
     <string name="action_settings">Settings</string>
+    <string name="notification">Notification</string>
+    <string name="notification_title">Ma première notification</string>
+    <string name="notification_desc">Cliquez sur moi je suis une notification</string>
 </resources>

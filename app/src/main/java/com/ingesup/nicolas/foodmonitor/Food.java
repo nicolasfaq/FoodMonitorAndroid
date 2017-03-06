@@ -2,6 +2,8 @@ package com.ingesup.nicolas.foodmonitor;
 
 import android.widget.ImageView;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -13,13 +15,12 @@ import java.util.List;
 
 public class Food {
     private String name;
-    private Date expDate;
-    public static HashMap<String, Date> listFood = new HashMap<>() ;
+    private String expDate;
+    public static HashMap<String, String> listFood = new HashMap<>() ;
 
-    Food (String name, Date expDate){
+    Food (String name, String expDate){
         this.name = name;
         this.expDate = expDate;
-        listFood.put(this.name,this.expDate );
     }
 
     public String getName() {
@@ -30,14 +31,15 @@ public class Food {
         return expDate;
     }
 
-/*    public static List<String> getListNameFoodList(){
-        List<String> names = new ArrayList<String>() {};
-
-        for (Food food:listFood
-             ) {
-            names.add(food.name);
+    public Date toDate(String strDate){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            return dateFormat.parse(strDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
         }
+    }
 
-        return names;
-    }*/
+
 }
